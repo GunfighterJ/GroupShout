@@ -1,0 +1,20 @@
+name: GroupShout
+main: org.tomlowmc.groupshout.GroupShout
+version: 1.1
+description: Allows you to shout in bright red with your group name. Denies those muted with essentials.
+authors: [GunfighterJ]
+depend: [Vault]
+softdepend: [Essentials]
+
+commands:
+   shout:
+      description: Toggles group shouting
+      usage: /<command>
+      permission: groupshout.command.shout
+      
+permissions:
+  groupshout.shout:
+    default: op
+    description: Allows you to use the shout command
+
+ 

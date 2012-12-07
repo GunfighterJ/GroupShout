@@ -2,8 +2,10 @@ package com.tomlowmc.groupshout;
 
 import com.earth2me.essentials.IEssentials;
 import com.earth2me.essentials.User;
+import java.util.List;
 import java.util.logging.Logger;
 import net.milkbowl.vault.permission.Permission;
+import org.bukkit.command.CommandException;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.PluginManager;
@@ -55,15 +57,18 @@ public class GroupShout extends JavaPlugin
         ess = (IEssentials) essPlugin;
     }
    
-   public boolean isEssHooked() {
-       return (ess == null)? false : true;
-   }
+    public boolean isEssHooked() {
+        return (ess == null)? false : true;
+    }
    
-   public boolean isMuted(Player player) {
-       User user = (User) player;
-       return (user.getMuted())? true : false;
-       
+    public boolean isMuted(Player player) {
+        if(isEssHooked()){
+            final User user = ess.getUser(player);
+            return (user.getMuted())? true : false;
+        } else {
+            return false;
+        }
    }
-   
+    
    
 }

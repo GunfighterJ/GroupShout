@@ -1,6 +1,7 @@
 package com.tomlowmc.groupshout;
 
 
+import com.earth2me.essentials.User;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
@@ -27,12 +28,7 @@ public class GSListener implements Listener {
         String name = player.getName();
         String group = GroupShout.perms.getPrimaryGroup(player);
         
-        if(player.hasPermission("groupshout.shout") && manager.isShouting(player)){
-            
-            if(this.plugin.isEssHooked() && this.plugin.isMuted(player)) {
-                return;
-            }
-            
+        if(player.hasPermission("groupshout.shout") && manager.isShouting(player) && !this.plugin.isMuted(player)){
             event.setCancelled(true);
             Bukkit.broadcastMessage(ChatColor.DARK_RED + "[" + ChatColor.RED + group + ChatColor.DARK_RED + "] " + ChatColor.DARK_RED + "[" + ChatColor.RED + name + ChatColor.DARK_RED + "] " + ChatColor.RED + event.getMessage());
         }

@@ -34,7 +34,13 @@ public class GScommand implements CommandExecutor {
                 }
                 
             } else {
-                sender.sendMessage("This command takes no arguments as of yet.");
+                String muted;
+                if(this.plugin.isMuted(player)){
+                    muted = "Muted";
+                } else {
+                    muted = "Not muted";
+                }
+                sender.sendMessage(muted);
             }
             
             return true;

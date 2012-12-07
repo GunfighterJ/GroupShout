@@ -34,7 +34,7 @@ public class GScommand implements CommandExecutor {
                 }
                 
             } else {
-                sender.sendMessage(ChatColor.YELLOW + "This command takes no arguements. Just use /shout");
+                sender.sendMessage(ChatColor.YELLOW + "This command takes no arguments. Just use /shout");
             }
             
             return true;

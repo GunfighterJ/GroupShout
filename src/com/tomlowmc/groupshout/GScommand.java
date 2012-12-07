@@ -34,13 +34,7 @@ public class GScommand implements CommandExecutor {
                 }
                 
             } else {
-                String muted;
-                if(this.plugin.isMuted(player)){
-                    muted = "Muted";
-                } else {
-                    muted = "Not muted";
-                }
-                sender.sendMessage(muted);
+                sender.sendMessage(ChatColor.YELLOW + "This command takes no arguements. Just use /shout");
             }
             
             return true;

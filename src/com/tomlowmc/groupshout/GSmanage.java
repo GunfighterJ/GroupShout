@@ -7,12 +7,12 @@ import org.bukkit.entity.Player;
 public class GSmanage {
     
     private final GroupShout plugin;
+    
+    private final Map<String, Boolean> shouting = new HashMap<>();
 
     public GSmanage(GroupShout plugin) {
         this.plugin = plugin;
     }
-    
-    private final Map<String, Boolean> shouting = new HashMap<>();
     
     void toggleShouting(Player player) {
         String name = player.getName();

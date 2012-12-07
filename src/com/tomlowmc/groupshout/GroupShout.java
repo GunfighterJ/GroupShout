@@ -2,10 +2,8 @@ package com.tomlowmc.groupshout;
 
 import com.earth2me.essentials.IEssentials;
 import com.earth2me.essentials.User;
-import java.util.List;
 import java.util.logging.Logger;
 import net.milkbowl.vault.permission.Permission;
-import org.bukkit.command.CommandException;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.PluginManager;
@@ -23,12 +21,10 @@ public class GroupShout extends JavaPlugin
   
   @Override
   public void onEnable() {
-      
     GroupShout.manager = new GSmanage(this);
     this.getServer().getPluginManager().registerEvents(new GSListener(this, GroupShout.manager), this);
     getCommand("shout").setExecutor(new GScommand(this, GroupShout.manager));
     setupPermissions();
-    
     getServer().getScheduler().scheduleSyncDelayedTask(this,
         new Runnable() {
             @Override

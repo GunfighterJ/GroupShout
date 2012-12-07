@@ -16,5 +16,3 @@ permissions:
   groupshout.shout:
     default: op
     description: Allows you to use the shout command
-
- 

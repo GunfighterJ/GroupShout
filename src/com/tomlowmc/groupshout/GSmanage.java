@@ -8,7 +8,7 @@ public class GSmanage {
     
     private final GroupShout plugin;
     
-    private final Map<String, Boolean> shouting = new HashMap<>();
+    private final Map<String, Boolean> shouting = new HashMap<String, Boolean>();
 
     public GSmanage(GroupShout plugin) {
         this.plugin = plugin;

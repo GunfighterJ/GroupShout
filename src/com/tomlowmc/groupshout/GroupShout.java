@@ -60,7 +60,7 @@ public class GroupShout extends JavaPlugin
     public boolean isMuted(Player player) {
         if(isEssHooked()){
             final User user = ess.getUser(player);
-            return (user.getMuted())? true : false;
+            return (user.isMuted())? true : false;
         } else {
             return false;
         }

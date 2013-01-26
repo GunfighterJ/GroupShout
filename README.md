@@ -19,3 +19,4 @@ Permissions:
   
   Testing the webhook URL
   Test 2
+  Test 3

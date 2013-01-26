@@ -15,3 +15,6 @@ Usage:
   
 Permissions:
   groupshout.shout - Allow use of the /shout command.
+  
+  
+  Testing the webhook URL
